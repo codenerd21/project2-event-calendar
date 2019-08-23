@@ -2,7 +2,13 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
+
+//require express session & passport
+const session = require('express-session');
+const passport = require('passport');
+
 var logger = require('morgan');
+
 
 //configures dotenv
 require('dotenv').config();
@@ -22,7 +28,18 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+//Session set-up 
+app.use(session({
+  secret: 'seisf4cohort',
+  resave: false,
+  saveUninitialized: true
+}))
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
