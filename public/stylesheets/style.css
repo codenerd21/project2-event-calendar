@@ -3,10 +3,6 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
-}
-
 .background {
   width: 100vw;
   height: 100vh;
@@ -15,6 +11,34 @@ a {
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+
+.navbar {
+  display: flex;
+  font-size: 2em;
+  height: 100px;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.navbar li {
+  list-style: none;
+  padding-right: 30px;
+}
+
+.links {
+  display:  flex;
+}
+
+.g-signin2 {
+  padding-right: 30px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
 
 .text-container {
   display: flex;
@@ -26,7 +50,7 @@ a {
 }
 
 .text-container h1 {
-  font-size: 3em;
+  font-size: 4em;
   margin-top: 0;
   margin-bottom: 0;
 }
