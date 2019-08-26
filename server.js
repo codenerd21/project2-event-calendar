@@ -18,6 +18,7 @@ require('./config/database');
 var indexRouter = require('./routes/index');
 var eventsRouter = require('./routes/events');
 
+
 var app = express();
 
 // view engine setup
