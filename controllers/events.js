@@ -8,7 +8,7 @@ module.exports = {
 
 function index(req, res) {
     Event.find({}, function(err, events) {
-      res.render('events/index', {events});
+      res.render('events', {events});
     });
 }
 
