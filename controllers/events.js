@@ -10,9 +10,13 @@ function index(req, res) {
     res.render('events/events');
 }
 
-function create(req, res) {
-  //add in ('events/events)
-  //wait - someone mentioned using a bootstrap form instead.
+function create(req, res, next) {
+  const event = new Event(req.body);
+  event.user = req.user._id;
+  event.save(function(err) {
+    if(err) return next(err);
+    res.redirect('/events');
+  });
 }
 
 function newEvent(req, res) {

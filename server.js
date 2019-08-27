@@ -2,6 +2,8 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
+//configures dotenv
+require('dotenv').config();
 
 //require express session & passport
 const session = require('express-session');
@@ -10,10 +12,9 @@ const passport = require('passport');
 var logger = require('morgan');
 
 
-//configures dotenv
-require('dotenv').config();
 //require the database config file (connect to DB)
 require('./config/database');
+require('./config/passport');
 
 var indexRouter = require('./routes/index');
 var eventsRouter = require('./routes/events');

@@ -11,7 +11,7 @@ const eventSchema = new Schema({
     default: Date.prototype.today
   },
   time: {
-    type: Number,
+    type: String,
     required: true
   },
   address: {
@@ -20,9 +20,14 @@ const eventSchema = new Schema({
   },
   descrip: {
     type: String,
+  },
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+    required: true
   }
 }, {
-  timestaps: true
+  timestamps: true
 });
 
 Date.prototype.today = function () { 
@@ -33,5 +38,4 @@ Date.prototype.today = function () {
 // First Argument is name of model
 // Second Argument is name of Schema you are compiling into Model
 
-const Event = mongoose.model('Event', eventSchema);
-module.export = Event;
+module.exports = mongoose.model('Event', eventSchema);
