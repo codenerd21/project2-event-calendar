@@ -8,7 +8,7 @@ const eventSchema = new Schema({
   },  
   date: {
     type: Date,
-    default: Date.prototype.today
+    required: true
   },
   time: {
     type: String,
@@ -30,9 +30,6 @@ const eventSchema = new Schema({
   timestamps: true
 });
 
-Date.prototype.today = function () { 
-  return ((this.getDate() < 10)?"0":"") + this.getDate() +"/"+(((this.getMonth()+1) < 10)?"0":"") + (this.getMonth()+1) +"/"+ this.getFullYear();
-}
 
 // Compile Schema into a Model and Export
 // First Argument is name of model
