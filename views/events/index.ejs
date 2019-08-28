@@ -29,30 +29,30 @@
             <button type="submit" class="btn btn-warning">Add Event</button>
           </form>
       <div class="container">
-        <div class="row col-md-6 col-md-offset-2 custyle">
-        <table class="table table-striped custab">
-        <thead>
-        <a href="#" class="btn btn-primary btn-xs pull-right"><b>+</b>Add New Category</a>
-          <tr>
-            <th>Date:</th>
-            <th>Time:</th>
-            <th>Event:</th>
-            <th class="text-center">Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% events.forEach(function(e) { %>
-          <tr>
-            <td><%= e.date %></td>
-            <td><%= e.time %></td>
-            <td><%= e.title %></td>
-            <td class="text-center">
-              <a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span>Details</a> 
-            </td>
-          </tr>
-          <% }) %>
-        </tbody>
-        </table>
+        <div class="row col-md-6 custyle table1">
+          <table class="table custab">
+            <thead>
+              <!-- <a href="#" class="btn btn-primary btn-xs pull-right"><b>+</b>Add New Category</a> -->
+              <tr>
+                <th>Date:</th>
+                <th>Time:</th>
+                <th>Event:</th>
+                <th class="text-center">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% events.forEach(function(e) { %>
+              <tr>
+                <td><%= e.date %></td>
+                <td><%= e.time %></td>
+                <td><%= e.title %></td>
+                <td class="text-center">
+                  <a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span>Details</a> 
+                </td>
+              </tr>
+              <% }) %>
+            </tbody>
+          </table>
         </div>
       </div>
     <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
