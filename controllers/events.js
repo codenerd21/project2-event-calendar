@@ -3,8 +3,15 @@ const Event = require('../models/event');
 module.exports = {
   new: newEvent,
   create,
-  index
+  index,
+  show
 };
+
+function show(req, res) {
+  Event.findById(req.params.id, function(err, event) {
+    res.render('events/show', {event});
+  });
+}
 
 function index(req, res) {
     Event.find({}, function(err, events) {
