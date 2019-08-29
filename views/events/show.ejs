@@ -1,16 +1,18 @@
-      <%- include('../partials/header');
-      
+      <%- include('../partials/header') %>
+      <section class="show-details-page">
+        <div>Title: </div>
+        <div><%= event.title %></div>
+        <div>Date: </div>
+        <div><%= event.date %></div>
+        <div>Time: </div>
+        <div><%= event.time %></div>
+        <div>Address: </div>
+        <div><%= event.address %></div>
+        <div>Description: </div>
+        <div><%= event.descrip %></div>
+        <div>Feedback: </div>
+        <div><% event.review %></div>
+      </section>
+      <%- include('../partials/footer') %>
 
-
-
-
-
-
-
-
-
-
-
-
-      <%- include('../partials/footer');
 

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const feedbackSchema = new Schema({
+const detailSchema = new Schema({
   comment: String,
   rating: {
     type: Number,
@@ -37,14 +37,10 @@ const eventSchema = new Schema({
     ref: "User",
     required: true
   },
-  feedback: [feedbackSchema]
+  review: [detailSchema]
 }, {
   timestamps: true
 });
 
-
-// Compile Schema into a Model and Export
-// First Argument is name of model
-// Second Argument is name of Schema you are compiling into Model
 
 module.exports = mongoose.model('Event', eventSchema);
