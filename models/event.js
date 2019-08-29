@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const detailSchema = new Schema({
+const feedbackSchema = new Schema({
   comment: String,
   rating: {
     type: Number,
@@ -45,7 +45,7 @@ const eventSchema = new Schema({
     ref: "User",
     required: true
   },
-  review: [detailSchema]
+  review: [feedbackSchema]
 }, {
   timestamps: true
 });
