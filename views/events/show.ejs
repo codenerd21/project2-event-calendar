@@ -1,16 +1,18 @@
       <%- include('../partials/header') %>
       <section class="show-details-page">
-        <div>Title: </div>
-        <div><%= event.title %></div>
-        <div>Date: </div>
-        <div><%= event.date %></div>
-        <div>Time: </div>
-        <div><%= event.time %></div>
-        <div>Address: </div>
-        <div><%= event.address %></div>
-        <div>Description: </div>
-        <div><%= event.descrip %></div>
-        <div>Feedback: </div>
+        <div class="show-child">Title: <%= event.title %></div>
+        <br/>
+        <div class="show-child">Date: <%= event.date %></div>
+        <div class="show-child">Time: <%= event.time %></div>
+        <br/>
+        <div class="show-child">Address: <%= event.address %></div>
+        <div class="show-child">City: <%= event.city %></div>
+        <div class="show-child">State: <%= event.state %></div>
+        <br/>
+        <div class="show-child">Event Description: <%= event.descrip %></div>
+        <br/>
+        <br/>
+        <div class="show-child">Feedback: </div>
         <div><% event.review %></div>
       </section>
       <%- include('../partials/footer') %>

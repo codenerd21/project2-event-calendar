@@ -109,5 +109,18 @@ h1 {
     width: 100%;
   }
 
+  .show-details-page {
+    display: grid;
+    color: white;
+    background-color: #A15D20;
+    font-size: 1em;
+    grid-template-rows: 150px;
+ }
 
+  .show-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
   
