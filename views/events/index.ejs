@@ -20,7 +20,7 @@
             <tbody>
               <% events.forEach(function(e) { %>
               <tr>
-                <td><%= e.date %></td>
+                <td><%= e.date.toDateString() %></td>
                 <td><%= e.time %></td>
                 <td><%= e.title %></td>
                 <td><%= e.city %></td>

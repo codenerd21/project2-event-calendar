@@ -9,7 +9,7 @@ module.exports = {
 };
 
 function deleteEvent(req, res) {
-  console.log(req.params.id);
+  if (!req.user) res.status(401).send('You are not authorized to do that.');
   Event.findByIdAndDelete(req.params.id, function(err, event){
     res.redirect('/events');
   });

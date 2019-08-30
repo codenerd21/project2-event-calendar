@@ -9,3 +9,5 @@ router.post('/', eventsCtrl.create);
 router.delete('/:id', eventsCtrl.delete);
 
 module.exports = router;
+
+
