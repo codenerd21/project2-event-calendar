@@ -10,6 +10,7 @@ const session = require('express-session');
 const passport = require('passport');
 
 var logger = require('morgan');
+var methodOverride = require('method-override');
 
 
 //require the database config file (connect to DB)
@@ -42,7 +43,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(methodOverride('_method'));
 
 app.use('/', indexRouter);
 app.use('/events', eventsRouter);

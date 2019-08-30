@@ -4,7 +4,15 @@ module.exports = {
   new: newEvent,
   create,
   index,
-  show
+  show,
+  delete: deleteEvent
+};
+
+function deleteEvent(req, res) {
+  console.log(req.params.id);
+  Event.findByIdAndDelete(req.params.id, function(err, event){
+    res.redirect('/events');
+  });
 };
 
 function show(req, res) {

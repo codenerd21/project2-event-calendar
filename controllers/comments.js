@@ -6,7 +6,8 @@ module.exports = {
 
 function create(req, res) {
   Event.findById(req.params.id, function(err, event) {
-    event.review.push(req.body);
+    event.reviews.push(req.body);
+    console.log(event.reviews);
     event.save(function(err) {
       res.redirect(`/events/${event._id}`);
     });

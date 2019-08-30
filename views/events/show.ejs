@@ -13,8 +13,7 @@
         <br/>
         <br/>
         <div class="show-child">Feedback: </div>
-        <!-- <div><% event.review %></div> -->
-        <% if (event.review.length) { %>
+        <% if (event.reviews.length) { %>
           <table>
             <thead>
               <tr>
@@ -24,10 +23,10 @@
               </tr>
             </thead>
             <tbody>
-              <% event.review.forEach(function(r) { %>
+              <% event.reviews.forEach(function(r) { %>
                 <tr>
                   <td><%= r.createdAt.toLocaleDateString() %></td>
-                  <td><%= r.review %></td>
+                  <td><%= r.comments %></td>
                   <td><%= r.rating %></td>
                 </tr>
               <% }); %>
@@ -42,7 +41,7 @@
     <form id="add-feedback-form" method="POST"
       action="/events/<%= event._id %>/comments">
       <label>Comments:</label>
-      <textarea name="review"></textarea>
+      <textarea name="comments"></textarea>
       <label>Rating:</label>
       <select name="rating">
       <option value="1">1</option>
