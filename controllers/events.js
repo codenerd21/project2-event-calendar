@@ -12,17 +12,16 @@ module.exports = {
 
 function update(req, res) {
   if (!req.user) res.status(401).send('You are not authorized to do that.');
-  Event.update(req.params.id, req.body);
+  Event.findByIdAndUpdate(req.params.id, req.body, function(err, event) {
   res.redirect(`/events/${req.params.id}`)
+  });
 }
 
 function edit(req, res) {
-  var event = Event.getOne(req.params.id);
-  res.render('events/edit', {
-    event,
-    eventId1: req.params.id
+  Event.findById(req.params.id, function(err, event) {
+    res.render('events/edit', {event});
   });
-}
+};
 
 function deleteEvent(req, res) {
   if (!req.user) res.status(401).send('You are not authorized to do that.');

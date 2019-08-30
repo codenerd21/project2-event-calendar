@@ -18,8 +18,9 @@
             </thead>
             <tbody>
               <% events.forEach(function(e) { %>
+                <%= console.log(e); %>
               <tr>
-                <td><%= e.date.toDateString() %></td>
+                <td><%= new Date(e.date).toDateString() %></td>
                 <td><%= e.time %></td>
                 <td><%= e.title %></td>
                 <td><%= e.city %></td>
