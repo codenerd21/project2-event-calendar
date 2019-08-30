@@ -5,13 +5,16 @@
         <div class="show-child">Date: <%= event.date %></div>
         <div class="show-child">Time: <%= event.time %></div>
         <br/>
-        <div class="show-child">Address: <%= event.address %></div>
+        <div class="show-child">Street Address: <%= event.street %></div>
         <div class="show-child">City: <%= event.city %></div>
         <div class="show-child">State: <%= event.state %></div>
         <br/>
         <div class="show-child">Event Description: <%= event.descrip %></div>
         <br/>
         <br/>
+        <div class="show-child">
+          <a href="/events/<%= event._id %>/edit">Edit Event</a>
+        </div>
         <div class="show-child">Feedback: </div>
         <% if (event.reviews.length) { %>
           <table>

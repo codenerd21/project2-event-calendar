@@ -5,8 +5,24 @@ module.exports = {
   create,
   index,
   show,
-  delete: deleteEvent
+  delete: deleteEvent,
+  edit,
+  update
 };
+
+function update(req, res) {
+  if (!req.user) res.status(401).send('You are not authorized to do that.');
+  Event.update(req.params.id, req.body);
+  res.redirect(`/events/${req.params.id}`)
+}
+
+function edit(req, res) {
+  var event = Event.getOne(req.params.id);
+  res.render('events/edit', {
+    event,
+    eventId1: req.params.id
+  });
+}
 
 function deleteEvent(req, res) {
   if (!req.user) res.status(401).send('You are not authorized to do that.');
