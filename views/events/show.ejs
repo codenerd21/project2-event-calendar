@@ -36,23 +36,41 @@
           <h5>No Reviews Yet</h5>
         <% } %>
       </section>
+      <div class="container">
+      <div class="row col-md-6 custyle table1">
+      <table class="table custab">
+        <thead>
+          <tr>
+            <th>Add Feedback:</th>
+          </tr>
+        </thead>
+        <tbody>
+          <form id="add-feedback-form" method="POST" action="/events/<%= event._id %>/comments">
+          <tr>
+            <td>
+              <label>Comments:</label>
+              <textarea name="comments"></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Rating:</label>
+              <select name="rating">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="submit" value="Add Feedback">
+            </td>
+          </tr>
+        </form>
+        <%- include('../partials/footer') %>
 
-    <br><br><h2>Add Feedback:</h2>
-    <form id="add-feedback-form" method="POST"
-      action="/events/<%= event._id %>/comments">
-      <label>Comments:</label>
-      <textarea name="comments"></textarea>
-      <label>Rating:</label>
-      <select name="rating">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-      </select>
-      <input type="submit" value="Add Feedback">
-    </form>
-
-      <%- include('../partials/footer') %>
 
 
